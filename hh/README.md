@@ -21,7 +21,6 @@ Open a new terminal and run the following command:
     ```bash
     cd frontend
     npm install -g http-server
-    http-server
     ```
     
 

@@ -13,7 +13,6 @@ contract Lottery {
 
     function enter() public payable {
         require(msg.value >= .01 ether, "Minimum 0.01 ETH required to enter");
-
         participants.push(payable(msg.sender));
     }
 

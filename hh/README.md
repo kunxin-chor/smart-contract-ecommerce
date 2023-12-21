@@ -1,13 +1,27 @@
-# Sample Hardhat Project
+# Setting up Metamask and Hardhat
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+In Metamask, add a new public network manually with the chain id: `31337`.
 
-Try running some of the following tasks:
+## To start hardhat
+    
+    ```bash
+    cd hh
+    npx hardhat node
+    ```
+## To deploy script
+Open a new terminal and run the following command:
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+    ```bash
+    cd hh
+    npx hardhat run scripts/deploy.js --network localhost
+    ```
+
+## To run the frontend
+
+    ```bash
+    cd frontend
+    npm install -g http-server
+    http-server
+    ```
+    
+

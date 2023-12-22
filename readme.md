@@ -28,13 +28,12 @@ npm install -g http-server
 ```
 
 ## Explanation of Frontend Script
-There are three folders in the `frontend` folder
+There are two folders in the `frontend` folder
 
 * `ethers`: EtherJS implementation of the Lottery frontend
-* `web3`: Web3JS implementation of the Lottery frontend, but *without* Metamask injection, using Hardhat as the provider directly
-* `sequolia`: Web3JS implementation but using Metamask
+* `web3`: Web3JS implementation of the Lottery frontend 
 
 ### Issues
 * `ethers`: Uses the local testnet implemented via Hardhat, no issues.
-* `web3`: Unrecongised selector error when invoking call views on the contract
-* `sequloia`: No issue, but it is using web3
+* `web3`: Unrecongised selector error when invoking call views on the contract on Hardhat. However if the contract is deployed to Sepolia (via RemixIDE), it works fine. Any calls will go straight to `recieve` or `fallback`.
+

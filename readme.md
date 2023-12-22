@@ -25,6 +25,7 @@ npx hardhat run scripts/deploy.js --network localhost
 ```bash
 cd frontend
 npm install -g http-server
+http-server
 ```
 
 ## Explanation of Frontend Script
@@ -37,3 +38,18 @@ There are two folders in the `frontend` folder
 * `ethers`: Uses the local testnet implemented via Hardhat, no issues.
 * `web3`: Unrecongised selector error when invoking call views on the contract on Hardhat. However if the contract is deployed to Sepolia (via RemixIDE), it works fine. Any calls will go straight to `recieve` or `fallback`.
 
+### Test Steps
+1. Deploy the contract to Hardhat as described above
+2. Update ABI and contract address in `ethers\contract.js`
+3. Run `http-server`
+4. Open `ethers\participant.html` in the browser
+5. Click on "Enter Lottery". User should get the alert notifying entering the lottery is successful.
+6. Click on "View Participants". User should see the list of participants in the lottery.
+7. Open `web3\participant.html` in the browser.
+8. Click on "Enter Lottery". User should get the alert notifying entering the lottery is successful. However, checking the log for Hardhat reveals that it's the `recieve` function that is being invoked
+9. Click on "View Participants". There will be an interal JSON-RPC error.
+10. Inspecting the logs in hardhat show `Lottery#<unrecognised selector>` error.
+
+### Troubleshooting Details
+* Hardhat, web3, ethers: latest available stable version
+* solc: 0.8.19

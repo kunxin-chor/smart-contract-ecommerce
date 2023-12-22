@@ -45,10 +45,11 @@ There are two folders in the `frontend` folder
 4. Open `ethers\participant.html` in the browser
 5. Click on "Enter Lottery". User should get the alert notifying entering the lottery is successful.
 6. Click on "View Participants". User should see the list of participants in the lottery.
-7. Open `web3\participant.html` in the browser.
-8. Click on "Enter Lottery". User should get the alert notifying entering the lottery is successful. However, checking the log for Hardhat reveals that it's the `recieve` function that is being invoked
-9. Click on "View Participants". There will be an interal JSON-RPC error.
-10. Inspecting the logs in hardhat show `Lottery#<unrecognised selector>` error.
+7. Update `web3\contract.js` to match the contract address and contract ABI
+8. Open `web3\participant.html` in the browser. 
+9. Click on "Enter Lottery". User should get the alert notifying entering the lottery is successful. However, checking the log for Hardhat reveals that it's the `recieve` function that is being invoked
+10. Click on "View Participants". There will be an interal JSON-RPC error.
+11. Inspecting the logs in hardhat show `Lottery#<unrecognised selector>` error.
 
 ### Troubleshooting Details
 * Hardhat, web3, ethers: latest available stable version

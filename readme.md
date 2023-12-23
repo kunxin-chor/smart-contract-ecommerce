@@ -2,11 +2,17 @@
 
 ## Setting up Metamask and Hardhat
 
+Note: using hardhat node has unresolved issues with eth_call
+https://github.com/smartcontractkit/full-blockchain-solidity-course-js/discussions/315
+Adding receive/fallback functions inside the solutions seem to just squelch the errors.
+
+Suggest using ganache as the local blockchain node. It also has an interface that we can view transactions/blocks.
+
 The frontend assumes that the user is using Metamask. Add a new **Custom Network** to your Metamask with the following:
-* Network Name: Hardhat (or anything you like)
-* New RPC URL:  http://127.0.0.1:8545
-* Chain ID: 31337
-* Currency Symbol: ETH
+* Network Name: Ganache (or anything you like)
+* New RPC URL:  http://127.0.0.1:7545 (see RPC Server on Ganache UI)
+* Chain ID: 1337
+* Currency Symbol: GanacheETH
 * Block Explorer URL: *leave it as blank*
 
 ## Start Hardhat
@@ -18,7 +24,7 @@ npx hardhat node
 ## Deploy 
 ```bash
 cd hh
-npx hardhat run scripts/deploy.js --network localhost
+npx hardhat run scripts/deploy.js --network ganache
 ```
 
 ## Launch the Frontend

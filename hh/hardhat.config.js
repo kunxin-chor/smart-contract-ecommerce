@@ -14,5 +14,9 @@ module.exports = {
       gas: "auto",
       gasPrice: "auto"
     },
+    ganache: {
+      url: "http://127.0.0.1:7545", // update this according to ganache ui
+      chainId: 1337
+    }
   },
 };
